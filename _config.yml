@@ -1,0 +1,25 @@
+title: Basic Dev Blog
+description: A folder-based Markdown blog for GitHub Pages.
+url: ""
+baseurl: ""
+timezone: Europe/Paris
+markdown: kramdown
+permalink: pretty
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+  - scope:
+      path: "posts"
+    values:
+      layout: post
+      type: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
+  - node_modules

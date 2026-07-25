@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="420" viewBox="0 0 960 420" role="img" aria-labelledby="title desc">
+  <title id="title">Folder-based post diagram</title>
+  <desc id="desc">A diagram showing one post folder containing Markdown and image files.</desc>
+  <rect width="960" height="420" rx="8" fill="#ffffff"/>
+  <rect x="42" y="42" width="876" height="336" rx="8" fill="#f6f7f9" stroke="#d8dedb" stroke-width="3"/>
+  <rect x="90" y="86" width="300" height="248" rx="8" fill="#1f6f5b"/>
+  <rect x="430" y="104" width="206" height="76" rx="8" fill="#ffffff" stroke="#d8dedb" stroke-width="3"/>
+  <rect x="430" y="222" width="206" height="76" rx="8" fill="#ffffff" stroke="#d8dedb" stroke-width="3"/>
+  <rect x="678" y="162" width="194" height="76" rx="8" fill="#ffffff" stroke="#d8dedb" stroke-width="3"/>
+  <path d="M390 142h40M390 260h40M636 142c34 0 42 58 42 58M636 260c34 0 42-60 42-60" fill="none" stroke="#a94f2a" stroke-width="5" stroke-linecap="round"/>
+  <text x="124" y="154" fill="#ffffff" font-family="Segoe UI, Arial, sans-serif" font-size="34" font-weight="700">One post</text>
+  <text x="124" y="202" fill="#ffffff" font-family="Consolas, monospace" font-size="26">posts/example/</text>
+  <text x="462" y="153" fill="#1f2523" font-family="Consolas, monospace" font-size="24">example.md</text>
+  <text x="488" y="271" fill="#1f2523" font-family="Consolas, monospace" font-size="24">cover.svg</text>
+  <text x="714" y="211" fill="#1f2523" font-family="Consolas, monospace" font-size="24">diagram.svg</text>
+</svg>
