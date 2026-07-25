@@ -69,8 +69,9 @@ Then open `http://127.0.0.1:4000`.
 
 Push this folder to a GitHub repository, then enable GitHub Pages in the repository settings. Use the branch and folder that contain this project, usually `main` and `/root`.
 
-## Optional Game
+## Optional Games
 
-The Three.js game is completely contained in `games/`. It has its own page,
-styles, script, favicon, and README. To remove it, delete that folder and remove
-the `Games` link from `_layouts/default.html`.
+`games/` contains a standalone catalog, and every game owns a separate folder.
+See `games/README.md` for the file structure and steps for adding or removing a
+game. To remove the entire games section, delete `games/` and remove the `Games`
+link from `_layouts/default.html`.

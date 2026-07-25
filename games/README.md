@@ -1,19 +1,38 @@
-# Signal Run
+# Games
 
-This folder is a standalone Three.js game. It does not use the blog layouts,
-stylesheet, configuration, or post system.
+`games/index.html` is a standalone catalog. Each game lives in its own folder and
+owns all of its code and assets.
 
-## Files
+```text
+games/
+|-- index.html
+|-- games.css
+|-- favicon.svg
+`-- signal-run/
+    |-- index.html
+    |-- game.css
+    |-- game.js
+    |-- cover.png
+    `-- favicon.svg
+```
 
-- `index.html` contains the game page and interface.
-- `game.css` contains all game styling.
-- `game.js` contains the Three.js scene and game logic.
-- `favicon.svg` is the game tab icon.
+## Add Another Game
 
-Three.js is loaded as an ES module from jsDelivr and pinned to version `0.185.1`.
-No build step is required.
+1. Create a folder such as `games/my-game/`.
+2. Keep the game's HTML, CSS, JavaScript, images, and other assets in that folder.
+3. Add one card to the `game-grid` in `games/index.html`.
 
-## Remove The Game
+Use relative links in the card:
 
-1. Delete the entire `games/` folder.
-2. Remove the `Games` link from `_layouts/default.html`.
+```html
+<a href="my-game/">
+  <img src="my-game/cover.png" alt="Describe the game">
+</a>
+```
+
+There is no build step. The catalog and games are copied directly by GitHub Pages.
+
+## Remove A Game
+
+Delete that game's folder and remove its card from `games/index.html`. Nothing in
+the blog layouts or styles needs to change.

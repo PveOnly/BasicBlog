@@ -1,3 +1,4 @@
+// This game intentionally has no dependency on the blog or games catalog.
 import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.185.1/build/three.module.js";
 
 const canvas = document.querySelector("#game-canvas");
