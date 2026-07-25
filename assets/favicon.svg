@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Basic Dev Blog logo</title>
+  <rect width="64" height="64" rx="12" fill="#1f6f5b"/>
+  <path d="M16 18h20l5 7h7v21H16z" fill="#ffffff"/>
+  <path d="M23 31h18M23 38h13" stroke="#1f6f5b" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="48" cy="17" r="6" fill="#a94f2a"/>
+</svg>
