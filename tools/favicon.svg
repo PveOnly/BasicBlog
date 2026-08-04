@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Tools</title>
+  <rect width="64" height="64" rx="12" fill="#1d2926"/>
+  <path d="M18 17h28v8H18zm0 11h28v8H18zm0 11h28v8H18z" fill="#dce8e2"/>
+  <path d="M18 17h9v8h-9z" fill="#ef7168"/>
+  <path d="M18 28h9v8h-9z" fill="#f2bc66"/>
+  <path d="M18 39h9v8h-9z" fill="#68b895"/>
+</svg>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Tier List Maker</title>
+  <rect width="64" height="64" rx="12" fill="#1d2926"/>
+  <path d="M14 14h36v10H14zm0 13h36v10H14zm0 13h36v10H14z" fill="#eef4f0"/>
+  <path d="M14 14h11v10H14z" fill="#ef7168"/>
+  <path d="M14 27h11v10H14z" fill="#f2d06b"/>
+  <path d="M14 40h11v10H14z" fill="#68b895"/>
+</svg>

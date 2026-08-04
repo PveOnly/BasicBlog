@@ -75,3 +75,10 @@ Push this folder to a GitHub repository, then enable GitHub Pages in the reposit
 See `games/README.md` for the file structure and steps for adding or removing a
 game. To remove the entire games section, delete `games/` and remove the `Games`
 link from `_layouts/default.html`.
+
+## Optional Tools
+
+`tools/` contains a standalone catalog, and every tool owns a separate folder.
+See `tools/README.md` for the file structure and steps for adding or removing a
+tool. To remove the entire tools section, delete `tools/` and remove the `Tools`
+link from `_layouts/default.html`.

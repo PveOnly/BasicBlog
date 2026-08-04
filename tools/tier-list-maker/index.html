@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f1f3f0">
+    <title>Tier List Maker</title>
+    <meta name="description" content="Create, arrange, and export an image tier list in your browser.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.7/Sortable.min.js"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+    <script defer src="app.js"></script>
+  </head>
+  <body>
+    <header class="app-header">
+      <a class="back-link" href="../" aria-label="Back to all tools">
+        <span aria-hidden="true">&larr;</span>
+        <span>Tools</span>
+      </a>
+      <div class="app-name">
+        <span class="app-name__mark" aria-hidden="true"></span>
+        <span>Tier List Maker</span>
+      </div>
+      <span class="save-status" id="save-status" aria-live="polite">Draft saved</span>
+    </header>
+
+    <main class="workspace">
+      <section class="toolbar" aria-label="Tier list controls">
+        <label class="title-control">
+          <span>Title</span>
+          <input id="title-input" type="text" value="My Tier List" maxlength="80">
+        </label>
+
+        <div class="toolbar__actions">
+          <label class="button button--secondary" for="image-input">
+            <span aria-hidden="true">+</span>
+            Add images
+          </label>
+          <input id="image-input" type="file" accept="image/*" multiple hidden>
+          <button class="button button--secondary" id="add-tier-button" type="button">
+            <span aria-hidden="true">+</span>
+            Add tier
+          </button>
+          <button class="button button--secondary" id="saved-lists-button" type="button">
+            <span aria-hidden="true">&#8801;</span>
+            My lists
+          </button>
+          <button class="button button--secondary" id="save-list-button" type="button">
+            Save
+          </button>
+          <button class="icon-button" id="reset-button" type="button" aria-label="Reset tier list" title="Reset tier list">
+            <span aria-hidden="true">&#8634;</span>
+          </button>
+          <button class="button button--primary" id="export-button" type="button">
+            <span aria-hidden="true">&#8595;</span>
+            Export PNG
+          </button>
+        </div>
+      </section>
+
+      <section class="editor">
+        <div class="tier-board" id="export-board">
+          <header class="board-header">
+            <p>Tier list</p>
+            <h1 id="board-title">My Tier List</h1>
+          </header>
+          <div class="tier-rows" id="tier-rows"></div>
+        </div>
+
+        <section class="item-bank-panel" aria-labelledby="bank-title">
+          <div class="item-bank-panel__header">
+            <div>
+              <p>Image library</p>
+              <h2 id="bank-title">Unranked</h2>
+            </div>
+            <span id="item-count">0 items</span>
+          </div>
+          <div class="item-zone item-bank" id="item-bank" data-empty-label="Add images to begin"></div>
+        </section>
+      </section>
+    </main>
+
+    <dialog class="tier-dialog" id="tier-dialog">
+      <form method="dialog" id="tier-form">
+        <div class="dialog-header">
+          <div>
+            <p>New row</p>
+            <h2>Add a tier</h2>
+          </div>
+          <button class="icon-button" type="button" id="close-dialog-button" aria-label="Close dialog" title="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <label class="dialog-field">
+          <span>Tier name</span>
+          <input id="new-tier-name" type="text" maxlength="8" value="New" required>
+        </label>
+
+        <fieldset>
+          <legend>Color</legend>
+          <div class="color-options">
+            <label><input type="radio" name="tier-color" value="#ef7168" checked><span style="--swatch: #ef7168">Red</span></label>
+            <label><input type="radio" name="tier-color" value="#f2a65f"><span style="--swatch: #f2a65f">Orange</span></label>
+            <label><input type="radio" name="tier-color" value="#f2d06b"><span style="--swatch: #f2d06b">Yellow</span></label>
+            <label><input type="radio" name="tier-color" value="#68b895"><span style="--swatch: #68b895">Green</span></label>
+            <label><input type="radio" name="tier-color" value="#6ea8d9"><span style="--swatch: #6ea8d9">Blue</span></label>
+            <label><input type="radio" name="tier-color" value="#a989cf"><span style="--swatch: #a989cf">Purple</span></label>
+          </div>
+        </fieldset>
+
+        <div class="dialog-actions">
+          <button class="button button--secondary" type="button" id="cancel-dialog-button">Cancel</button>
+          <button class="button button--primary" type="submit">Add tier</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="saved-lists-dialog" id="saved-lists-dialog">
+      <div class="saved-lists-shell">
+        <div class="dialog-header">
+          <div>
+            <p>Browser storage</p>
+            <h2>My tier lists</h2>
+          </div>
+          <button class="icon-button" type="button" id="close-saved-lists-button" aria-label="Close saved lists" title="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="saved-lists-toolbar">
+          <span id="saved-list-count">0 saved lists</span>
+          <button class="button button--primary" id="new-list-button" type="button">
+            <span aria-hidden="true">+</span>
+            New list
+          </button>
+        </div>
+
+        <div class="saved-lists" id="saved-lists"></div>
+        <p class="saved-lists-empty" id="saved-lists-empty">No saved lists yet.</p>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
