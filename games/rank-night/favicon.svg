@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <title>Rank Night</title>
+  <rect width="64" height="64" rx="12" fill="#101514"/>
+  <path d="M12 12h40v11H12zm0 14h40v11H12zm0 14h40v11H12z" fill="#eef3f0"/>
+  <path d="M12 12h13v11H12z" fill="#f06f67"/>
+  <path d="M12 26h13v11H12z" fill="#f2bd65"/>
+  <path d="M12 40h13v11H12z" fill="#69bb96"/>
+  <circle cx="44" cy="31.5" r="5" fill="#101514"/>
+</svg>

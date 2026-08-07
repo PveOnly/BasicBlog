@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#101514">
+    <title>Rank Night</title>
+    <meta name="description" content="A TV-friendly party game for building tier lists together.">
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="stylesheet" href="game.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/sortablejs@1.15.7/Sortable.min.js"></script>
+    <script defer src="game.js"></script>
+  </head>
+  <body>
+    <main class="game-shell">
+      <header class="game-header">
+        <a class="back-link" href="../" aria-label="Back to all games">
+          <span aria-hidden="true">&larr;</span>
+          <span>Games</span>
+        </a>
+        <div class="game-name">
+          <span class="game-name__mark" aria-hidden="true"></span>
+          <span>Rank Night</span>
+        </div>
+        <button class="header-button" id="history-button" type="button">
+          <span aria-hidden="true">&#9776;</span>
+          <span>Rankings</span>
+        </button>
+      </header>
+
+      <section class="topic-bar">
+        <div>
+          <p id="topic-category">Tonight's topic</p>
+          <h1 id="topic-title">Waiting for a topic</h1>
+        </div>
+        <button class="button button--secondary" id="new-topic-button" type="button">
+          <span aria-hidden="true">&#8635;</span>
+          New topic
+        </button>
+      </section>
+
+      <section class="tier-board" id="tier-board" aria-label="Tier list">
+        <div class="tier-row" data-tier="S">
+          <div class="tier-label tier-label--s">S</div>
+          <div class="drop-zone" data-zone="S" aria-label="S tier"></div>
+        </div>
+        <div class="tier-row" data-tier="A">
+          <div class="tier-label tier-label--a">A</div>
+          <div class="drop-zone" data-zone="A" aria-label="A tier"></div>
+        </div>
+        <div class="tier-row" data-tier="B">
+          <div class="tier-label tier-label--b">B</div>
+          <div class="drop-zone" data-zone="B" aria-label="B tier"></div>
+        </div>
+        <div class="tier-row" data-tier="C">
+          <div class="tier-label tier-label--c">C</div>
+          <div class="drop-zone" data-zone="C" aria-label="C tier"></div>
+        </div>
+        <div class="tier-row" data-tier="D">
+          <div class="tier-label tier-label--d">D</div>
+          <div class="drop-zone" data-zone="D" aria-label="D tier"></div>
+        </div>
+      </section>
+
+      <section class="card-tray" aria-labelledby="tray-title">
+        <div class="tray-heading">
+          <div>
+            <p>Still debating</p>
+            <h2 id="tray-title">Unranked</h2>
+          </div>
+          <span id="unranked-count">0 cards</span>
+        </div>
+        <div class="drop-zone tray-zone" id="card-tray" data-zone="unranked" aria-label="Unranked cards"></div>
+      </section>
+
+      <footer class="action-bar">
+        <div class="progress-copy">
+          <strong id="ranked-count">0 / 0 ranked</strong>
+          <span id="selection-status" aria-live="polite">Choose a card</span>
+        </div>
+        <button class="button button--primary" id="finish-button" type="button" disabled>
+          Finish ranking
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+      </footer>
+
+      <section class="start-screen is-visible" id="start-screen" aria-labelledby="start-title">
+        <p>TV party ranking</p>
+        <h2 id="start-title">Rank Night</h2>
+        <span>One topic. Eight cards. Plenty to argue about.</span>
+        <div class="start-actions">
+          <button class="button button--start" id="generate-button" type="button">Generate tier list</button>
+          <button class="button button--secondary" id="start-history-button" type="button">Past rankings</button>
+        </div>
+      </section>
+    </main>
+
+    <dialog class="results-dialog" id="results-dialog">
+      <div class="dialog-shell">
+        <div class="dialog-heading">
+          <div>
+            <p>Final ranking</p>
+            <h2 id="result-title">Topic</h2>
+          </div>
+          <span class="saved-badge" id="saved-badge">Saved</span>
+        </div>
+        <div class="result-list" id="result-list"></div>
+        <div class="dialog-actions">
+          <button class="button button--secondary" id="continue-button" type="button">Keep editing</button>
+          <button class="button button--primary" id="next-topic-button" type="button">New topic</button>
+        </div>
+      </div>
+    </dialog>
+
+    <dialog class="history-dialog" id="history-dialog">
+      <div class="dialog-shell">
+        <div class="dialog-heading">
+          <div>
+            <p>Saved on this TV</p>
+            <h2>Past rankings</h2>
+          </div>
+          <button class="icon-button" id="close-history-button" type="button" aria-label="Close rankings" title="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="history-list" id="history-list"></div>
+        <p class="history-empty" id="history-empty">No finished rankings yet.</p>
+      </div>
+    </dialog>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>

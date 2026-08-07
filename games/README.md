@@ -8,7 +8,13 @@ games/
 |-- index.html
 |-- games.css
 |-- favicon.svg
-`-- signal-run/
+|-- signal-run/
+    |-- index.html
+    |-- game.css
+    |-- game.js
+    |-- cover.png
+    `-- favicon.svg
+`-- rank-night/
     |-- index.html
     |-- game.css
     |-- game.js
